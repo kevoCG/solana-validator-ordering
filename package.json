@@ -1,0 +1,26 @@
+{
+  "name": "solana-validator-ordering",
+  "version": "1.0.0",
+  "description": "Measurement rig and analysis engine for Solana validator transaction ordering mechanics across Agave, Jito, and Frankendancer clients.",
+  "author": "0xQueryLab",
+  "license": "MIT",
+  "main": "dist/cli.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/cli.ts",
+    "analyze": "ts-node src/cli.ts --analyze-live",
+    "sample-data": "ts-node src/cli.ts --fetch-cluster",
+    "test": "ts-node src/cli.ts --help"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.8",
+    "bs58": "^6.0.0",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
