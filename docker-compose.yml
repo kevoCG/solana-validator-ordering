@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  solana-ordering-rig:
+    build: .
+    container_name: solana_validator_ordering_rig
+    environment:
+      - SOLANA_RPC_URL=${SOLANA_RPC_URL:-https://solana-rpc.publicnode.com}
+      - SPEND_CAP_SOL=${SPEND_CAP_SOL:-0.05}
+    volumes:
+      - ./data:/app/data
+      - ./report:/app/report
+    command: ["--dry-run", "--sample-count", "2"]
