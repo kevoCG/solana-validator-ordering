@@ -10,7 +10,7 @@
 
 ## 1. Quick Start & Reproducibility (Single Command)
 
-This project is packaged with **Docker Compose** for instant, reproducible execution:
+This project includes an automated interactive analytics dashboard and measurement rig:
 
 ```bash
 # Clone and run full analysis in dry-run mode
@@ -25,7 +25,13 @@ npm run build
 npm start -- --dry-run --sample-count 2
 ```
 
+### 📊 Interactive Analytics Dashboard
+SBTE generates a standalone interactive web dashboard in `report/dashboard.html` visualizing live slot telemetry, Jito MEV tips, client breakdown, and priority fee execution curves:
+
+![SBTE Dashboard Preview](./report/assets/dashboard_preview.png)
+
 Outputs:
+* **Interactive Dashboard:** `report/dashboard.html` (open directly in any browser).
 * **Raw Cryptographic Blocks:** Stored as verifiable JSON in `data/raw/` (including slots, signatures, and compute units).
 * **Formal Investigation Report:** Generated automatically in `report/REPORT.md`.
 * **Visual Plots:** High-resolution charts saved in `report/assets/`.
