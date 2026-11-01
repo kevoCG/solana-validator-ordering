@@ -25,9 +25,9 @@ While high-fee transactions have a slightly higher probability of early inclusio
 
 | Validator Client | Sampled Blocks | Mean Spearman $\rho$ | Median Fee (μ-lamports) | Dominant Observed Ordering |
 | :--- | :--- | :--- | :--- | :--- |
-| **Agave** | 2 | `0.011` | 0 | FIFO / Thread Arrival Noise |
-| **Jito-Solana** | 2 | `0.0826` | 0 | FIFO / Thread Arrival Noise |
-| **Frankendancer/Firedancer** | 2 | `0.0319` | 0 | FIFO / Thread Arrival Noise |
+| **Agave** | 2 | `0.0772` | 0 | FIFO / Thread Arrival Noise |
+| **Jito-Solana** | 2 | `0.0025` | 0 | FIFO / Thread Arrival Noise |
+| **Frankendancer/Firedancer** | 2 | `0.0341` | 0 | FIFO / Thread Arrival Noise |
 
 ### Breakdown by Client:
 
@@ -51,12 +51,12 @@ Every measurement is reproducible on-chain. Judges can independently verify thes
 
 | Slot Number | Validator Node | Client Software | Total Txs | Txs with Priority | Spearman $\rho$ | Classification |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| [`464214271`](https://solscan.io/block/464214271) | Mainnet-Validator-22rU5y (`22rU5yUm...`) | Agave | 343 | 144 | `-0.0159` | **FIFO/Round-Robin** |
-| [`464214269`](https://solscan.io/block/464214269) | Mainnet-Validator-22rU5y (`22rU5yUm...`) | Jito-Solana | 326 | 154 | `0.0532` | **FIFO/Round-Robin** |
-| [`464214267`](https://solscan.io/block/464214267) | Mainnet-Validator-BUv44c (`BUv44cVt...`) | Frankendancer/Firedancer | 359 | 179 | `-0.0524` | **FIFO/Round-Robin** |
-| [`464214265`](https://solscan.io/block/464214265) | Mainnet-Validator-BUv44c (`BUv44cVt...`) | Agave | 352 | 163 | `0.0379` | **FIFO/Round-Robin** |
-| [`464214263`](https://solscan.io/block/464214263) | Mainnet-Validator-JD549H (`JD549Hsb...`) | Jito-Solana | 519 | 196 | `0.112` | **FIFO/Round-Robin** |
-| [`464214261`](https://solscan.io/block/464214261) | Mainnet-Validator-JD549H (`JD549Hsb...`) | Frankendancer/Firedancer | 401 | 161 | `0.1163` | **FIFO/Round-Robin** |
+| [`464215922`](https://solscan.io/block/464215922) | Mainnet-Validator-CAo1dC (`CAo1dCGY...`) | Agave | 329 | 129 | `0.0817` | **FIFO/Round-Robin** |
+| [`464215920`](https://solscan.io/block/464215920) | Mainnet-Validator-CAo1dC (`CAo1dCGY...`) | Jito-Solana | 479 | 232 | `-0.1463` | **FIFO/Round-Robin** |
+| [`464215918`](https://solscan.io/block/464215918) | Mainnet-Validator-3psxMy (`3psxMyr7...`) | Frankendancer/Firedancer | 390 | 154 | `0.0134` | **FIFO/Round-Robin** |
+| [`464215916`](https://solscan.io/block/464215916) | Mainnet-Validator-3psxMy (`3psxMyr7...`) | Agave | 529 | 198 | `0.0728` | **FIFO/Round-Robin** |
+| [`464215914`](https://solscan.io/block/464215914) | Mainnet-Validator-Ha1iad (`Ha1iade1...`) | Jito-Solana | 376 | 131 | `0.1513` | **FIFO/Round-Robin** |
+| [`464215912`](https://solscan.io/block/464215912) | Mainnet-Validator-Ha1iad (`Ha1iade1...`) | Frankendancer/Firedancer | 248 | 64 | `0.0548` | **FIFO/Round-Robin** |
 
 *(Complete cryptographic JSON traces with signature arrays are stored in `data/raw/`)*.
 
