@@ -18,6 +18,8 @@ export interface ParsedBlockTx {
   isSuccessful: boolean;
   numInstructions: number;
   writeLockedAccountsCount: number;
+  isJitoBundle?: boolean;
+  jitoTipLamports?: number;
 }
 
 export interface BlockAnalysisResult {
@@ -30,6 +32,8 @@ export interface BlockAnalysisResult {
   analyzedTransactions: number;
   txsWithPriorityFee: number;
   medianPriorityFee: number;
+  jitoBundlesCount?: number;
+  totalJitoTipsLamports?: number;
   spearmanRho: number; // Correlation between priority fee and block position
   pValueEstimate: number;
   orderingRuleDetected: 'Strict-Priority' | 'Weak-Priority' | 'FIFO/Round-Robin' | 'Uncorrelated-Noise';

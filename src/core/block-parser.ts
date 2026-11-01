@@ -3,6 +3,7 @@ import bs58 from 'bs58';
 import { CONFIG } from '../config/constants';
 import { BlockAnalysisResult, ParsedBlockTx, ValidatorClientType } from './types';
 import { calculateSpearmanRankCorrelation } from '../stats/spearman';
+import { detectJitoTip } from './jito-mev';
 
 /**
  * Extracts compute budget instructions from compiled / versioned transaction instructions.
@@ -79,6 +80,13 @@ export function parseBlockForOrdering(
       accountKeys
     );
 
+    const jitoInfo = detectJitoTip(
+      accountKeys,
+      txObj.transaction.message.compiledInstructions,
+      txObj.meta?.postBalances,
+      txObj.meta?.preBalances
+    );
+
     // Number of write-locked accounts
     const header = txObj.transaction.message.header;
     const writeLockedCount = (header?.numRequiredSignatures || 0) + (header?.numReadonlySignedAccounts || 0);
@@ -91,9 +99,16 @@ export function parseBlockForOrdering(
       computeUnitLimit,
       isSuccessful,
       numInstructions: txObj.transaction.message.compiledInstructions.length,
-      writeLockedAccountsCount: writeLockedCount
+      writeLockedAccountsCount: writeLockedCount,
+      isJitoBundle: jitoInfo.isJitoBundle,
+      jitoTipLamports: jitoInfo.tipLamports
     });
   }
+
+  // Jito bundle aggregates
+  const jitoTxs = transactions.filter(t => t.isJitoBundle);
+  const jitoBundlesCount = jitoTxs.length;
+  const totalJitoTipsLamports = jitoTxs.reduce((sum, t) => sum + (t.jitoTipLamports || 0), 0);
 
   // Filter txs with priority fees for correlation analysis
   const txsWithPriority = transactions.filter(t => t.computeUnitPriceMicroLamports > 0);
@@ -130,6 +145,8 @@ export function parseBlockForOrdering(
     analyzedTransactions: transactions.length,
     txsWithPriorityFee: txsWithPriorityCount,
     medianPriorityFee,
+    jitoBundlesCount,
+    totalJitoTipsLamports,
     spearmanRho: rho,
     pValueEstimate: pValueApprox,
     orderingRuleDetected,

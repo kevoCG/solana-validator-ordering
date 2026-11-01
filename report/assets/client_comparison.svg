@@ -17,9 +17,9 @@
       <text x="192" y="88" fill="#f1f5f9" font-size="13" font-family="system-ui, sans-serif" font-weight="500" text-anchor="end">
         Agave
       </text>
-      <rect x="210" y="65" width="16.8" height="36" rx="5" fill="#3b82f6" />
-      <text x="238.8" y="88" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
-        ρ = 0.0333
+      <rect x="210" y="65" width="12.0" height="36" rx="5" fill="#3b82f6" />
+      <text x="234.0" y="88" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
+        ρ = 0.0110
       </text>
     
 
@@ -27,9 +27,9 @@
       <text x="192" y="152" fill="#f1f5f9" font-size="13" font-family="system-ui, sans-serif" font-weight="500" text-anchor="end">
         Jito-Solana
       </text>
-      <rect x="210" y="129" width="20.4" height="36" rx="5" fill="#10b981" />
-      <text x="242.4" y="152" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
-        ρ = -0.0404
+      <rect x="210" y="129" width="41.7" height="36" rx="5" fill="#10b981" />
+      <text x="263.7" y="152" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
+        ρ = 0.0826
       </text>
     
 
@@ -37,9 +37,9 @@
       <text x="192" y="216" fill="#f1f5f9" font-size="13" font-family="system-ui, sans-serif" font-weight="500" text-anchor="end">
         Frankendancer/Firedancer
       </text>
-      <rect x="210" y="193" width="12.0" height="36" rx="5" fill="#f59e0b" />
-      <text x="234.0" y="216" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
-        ρ = -0.0104
+      <rect x="210" y="193" width="16.1" height="36" rx="5" fill="#f59e0b" />
+      <text x="238.1" y="216" fill="#e2e8f0" font-size="13" font-family="monospace" font-weight="600">
+        ρ = 0.0319
       </text>
     
 

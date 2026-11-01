@@ -9,6 +9,7 @@ import { findSlotsForValidators } from './core/leader-sched';
 import { TransactionDispatcher } from './core/tx-sender';
 import { BlockAnalysisResult, TargetValidator } from './core/types';
 import { generateResearchReport } from './stats/report-generator';
+import { generateInteractiveDashboard } from './stats/dashboard-generator';
 
 const program = new Command();
 
@@ -152,6 +153,11 @@ program
     }
     fs.writeFileSync(CONFIG.REPORT_FILE, reportMd, 'utf-8');
     console.log(`[Phase 5] Research Report written to: ${CONFIG.REPORT_FILE}`);
+
+    // Generate interactive Web Dashboard
+    const dashboardPath = path.join(path.dirname(CONFIG.REPORT_FILE), 'dashboard.html');
+    generateInteractiveDashboard(results, dashboardPath);
+    console.log(`[Phase 5] Interactive Dashboard generated at: ${dashboardPath}`);
 
     console.log('\n===============================================================');
     console.log('  ANALYSIS RUN COMPLETE: Single-command verification verified. ');
